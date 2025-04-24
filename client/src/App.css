@@ -30,6 +30,7 @@
 .content table{
   width: 100%;
   border: none;
+  row-gap: 0;
 }
 .content table thead th,
 .content table thead td{
@@ -44,8 +45,11 @@
   padding: 10px 0;
   font-size: 1.1rem;
   border-bottom: 1px solid rgb(101, 96, 96);
+}
 
-
+input,
+select{
+  padding: 5px;
 }
 
 .edit{
@@ -60,6 +64,15 @@
 .delete{
   color: white;
   background-color: rgb(196, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.1rem;
+}
+
+.addUser{
+  color: white;
+  background-color: rgb(39, 39, 193);
   border: none;
   border-radius: 5px;
   padding: 0.5rem 0.7rem;

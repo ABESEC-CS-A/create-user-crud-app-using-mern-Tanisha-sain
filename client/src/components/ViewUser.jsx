@@ -1,23 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "../App.css"
-// import axios from "axios"
+import axios from "axios"
 
 const ViewUser = () => {
-    // const [users, setUsers] = useState([]);
-    // const [error, setError] = useState();
-    // useEffect(() => {
-    //     fetchUser();
-    // },[])
+    const [users, setUsers] = useState([]);
+    const [error, setError] = useState();
+    useEffect(() => {
+        fetchUser();
+    },[])
 
-    // const fetchUser = async () => {
-    //     try {
-    //         const res = await axios.get("");
-    //         setUsers(res.data);
-    //     } catch (error) {
-    //         console.log("Data fetching error", error.message);
-    //         setError(error.message);
-    //     }
-    // }
+    const fetchUser = async () => {
+        try {
+            const res = await axios.get("https://userapp6.onrender.com/users");
+            console.log(res.data);
+            setUsers(res.data);
+        } catch (error) {
+            console.log("Data fetching error", error.message);
+            setError(error.message);
+        }
+    }
 
   return (
     <div className='content'>
@@ -34,13 +35,13 @@ const ViewUser = () => {
                 <tr>
                     <td>#</td>
                     <td>
-                        <input type="email" />
+                        <input type="email" placeholder='Enter User Email' />
                     </td>
                     <td>
-                        <input type="text" />
+                        <input type="text" placeholder='Enter Name of User' />
                     </td>
                     <td>
-                        <select name="" id="">
+                        <select name="role">
                             <option value="Student">Student</option>
                             <option value="Teacher">Teacher</option>
                             <option value="Admin">Admin</option>
@@ -52,19 +53,19 @@ const ViewUser = () => {
                 </tr>
             </thead>
             <tbody>
-                {/* {error || users.map((user,index) => (
+                {error || users.map((user,index) => (
                     <tr key={user.email}>
                         <td>{++index}</td>
-                        <td>{user.name}</td>
                         <td>{user.email}</td>
+                        <td>{user.name}</td>
                         <td>{user.role}</td>
                         <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <button className='edit'>Edit</button>
+                            <button className='delete'>Delete</button>
                         </td>
                     </tr>
-                ))} */}
-                <tr>
+                ))}
+                {/* <tr>
                     <td>1</td>
                     <td>tanisha@gmail.com</td>
                     <td>Tanisha</td>
@@ -83,7 +84,7 @@ const ViewUser = () => {
                         <button className='edit'>Edit</button>
                         <button className='delete'>Delete</button>
                     </td>
-                </tr>
+                </tr> */}
             </tbody>
         </table>
     </div>
