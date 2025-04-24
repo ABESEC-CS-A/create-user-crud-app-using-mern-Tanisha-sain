@@ -1,0 +1,67 @@
+.header{
+  width: 100vw;
+  height: 10vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.footer{
+  width: 100vw;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.content{
+  width: 100vw;
+  height: 85vh;
+  background-color: white;
+  color: black;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.content h1{
+  background-color: rgb(190, 190, 190);
+  padding: 5px 0;
+}
+.content table{
+  width: 100%;
+  border: none;
+}
+.content table thead th,
+.content table thead td{
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(101, 96, 96);
+}
+
+.content table tbody tr td{
+  /* border: 1px solid red; */
+  padding: 10px 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgb(101, 96, 96);
+
+
+}
+
+.edit{
+  color: white;
+  background-color: green;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+.delete{
+  color: white;
+  background-color: rgb(196, 0, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.1rem;
+}
